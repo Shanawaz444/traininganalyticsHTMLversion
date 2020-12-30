@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TrainingAndAnalyticsDashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+  <style>
+
+    
+.frnt_img{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    background-color: #1070CA;
+    clip-path: polygon(70% 28%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.login_page_main_card {
+    background-color: white;
+    width: 60%;
+    margin-left: auto;
+    margin-right: 300px;
+    margin-top: 150px;
+}
+
+.login_page_main_card_row {
+    margin-top: 10px;
+    display: flex;
+    padding: 10px;
+}
+.login_heading_element {
+    color: #212529;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 350;
+}
+
+.login_paragragh_element {
+    color: #9EA0A5;
+    font-size: 14px;
+    font-weight: 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login_heading_title_card {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.login_username2 {
+    width: 290px;
+    height: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: 0;
+}
+
+.login_password2 {
+    width: 290px;
+    height: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: 0;
+}
+
+.login_username1 {
+    padding: 20px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    margin: 30px;
+    margin-bottom: 14px;
+}
+
+.login_password1 {
+    padding: 20px;
+    padding-bottom: 0px;
+    margin: 30px;
+    margin-top: 0px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+.login_register_now_btn {
+    border-radius: 4px;
+    border-style: none;
+    background-color: #1665D8;
+    color: white;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 30px;
+    width: 290px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.login_btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.paragraph_element:hover {
+    text-decoration: underline;
+    transition: 2s;
+}
+
+.paragraph_element {
+    color: #9EA0A5;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 2s;
+    text-decoration: none;
+}
+
+.href_container {
+    text-align: center;
+}
+  </style>
+</head>
+<body style="background-color: #F0F0F0; margin: 0px;">
+  <div class="frnt_img">
+    
+</div>
+<div class="login_page_main_card">
+    <div class="login_page_main_card_row">
+        <img src="https://image.freepik.com/free-vector/student-activism-abstract-concept-vector-illustration-campus-activism-political-environmental-change-economic-social-movement-student-group-social-media-posting-abstract-metaphor_335657-1922.jpg" alt=""
+width="350" height="400">
+        <div class="adada">
+            <div class="login_heading_title_card">
+                <h1 class="login_heading_element">Login</h1>
+                <p class="login_paragragh_element">Enter your Details</p>
+            </div>
+            <div class="registerpageinput">
+                <div class="login_username1">
+                    <input type="text" class="login_username2" placeholder="UserName" id="redgnumber" >
+                </div>
+                <div class="login_password1">
+                    <input type="password" class="login_password2" placeholder="Password" id="password" [value]="password">
+                </div>
+            
+            </div>
+            <div class="login_btn-container">
+                <button class="login_register_now_btn" onclick="location.href='regester.html'">Login</button>
+                  
+              </div>
+              <div class="href_container">
+                  <a href="/">
+                      <p class="paragraph_element">Forgot Password</p>
+                  </a>
+              
+                  <a href="/">
+                      <p class="paragraph_element">Not a User ? Sign Up</p>
+                  </a>
+              </div>
+              
+        </div>
+    </div>
+</div>
+</body>
+</html>
