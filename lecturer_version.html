@@ -8,7 +8,7 @@
 <body>
     <div class="banner">
         <div class="main_heading " style="display: flex">
-            <h1>Vignan Student Analatics</h1>
+            <h1>Vignan Student Analytics</h1>
             
         </div>
         <div style="text-align: right" class="main_heading_button_container">
@@ -21,19 +21,19 @@
         <div class=branch>
             <h1 class="heading">Branch</h1>
             <div class="line"></div>
-            <div class="btn btn-one"><span>CSE</span></div>
-            <div class="btn btn-one"><span>MECH</span></div>
-            <div class="btn btn-one"><span>IT</span></div>
-            <div class="btn btn-one"><span>ECM</span></div>
+            <div class="btn btn-one" onclick="cse()"><span>CSE</span></div>
+            <div class="btn btn-one" onclick="mech()"><span>MECH</span></div>
+            <div class="btn btn-one" onclick="it()"><span>IT</span></div>
+            <div class="btn btn-one" onclick="ecm()"><span>ECM</span></div>
             
         </div>
         <div class=section>
             <h1 class="heading">Section</h1>
             <div class="line"></div>
-            <div class="btn btn-one"><span>CSE-1</span></div>
-            <div class="btn btn-one"><span>CSE-2</span></div>
-            <div class="btn btn-one"><span>CSE-3</span></div>
-            <div class="btn btn-one"><span>CSE-4</span></div>
+            <div class="btn btn-one" id="sec1"><span>CSE-1</span></div>
+            <div class="btn btn-one" id="sec2"><span>CSE-2</span></div>
+            <div class="btn btn-one" id="sec3"><span>CSE-3</span></div>
+            <div class="btn btn-one" id="sec4"><span>CSE-4</span></div>
         </div>
         <div class=category    >
             
@@ -96,6 +96,46 @@
 
                     <button class="buttonn"><span>Submit</span></button>
         </div>
+
+
+       <script>
+
+
+function cse()
+{
+    document.getElementById("sec1").innerHTML = "cse1";
+    document.getElementById("sec2").innerHTML = "cse2";
+    document.getElementById("sec3").innerHTML = "cse3";
+    document.getElementById("sec4").innerHTML = "cse4";
+}
+
+function mech()
+{
+    document.getElementById("sec1").innerHTML = "mech1";
+    document.getElementById("sec2").innerHTML = "mech";
+    document.getElementById("sec3").innerHTML = "mech3";
+    document.getElementById("sec4").innerHTML = "mech4";
+}
+
+function it()
+{
+    document.getElementById("sec1").innerHTML = "it1";
+    document.getElementById("sec2").innerHTML = "it2";
+    document.getElementById("sec3").innerHTML = "it3";
+    document.getElementById("sec4").innerHTML = "it4";
+}
+
+function ecm()
+{
+    document.getElementById("sec1").innerHTML = "ecm1";
+    document.getElementById("sec2").innerHTML = "ecm2";
+    document.getElementById("sec3").innerHTML = "ecm3";
+    document.getElementById("sec4").innerHTML = "ecm4";
+
+}
+
+       </script>
+
 </body>
 
 </html>

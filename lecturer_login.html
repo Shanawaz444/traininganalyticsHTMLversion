@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <style>
 
     
@@ -133,7 +134,7 @@ width="350" height="400">
             </div>
             <div class="registerpageinput">
                 <div class="login_username1">
-                    <input type="text" class="login_username2" placeholder="UserName" id="redgnumber" >
+                    <input type="text" class="login_username2" placeholder="UserName" id="registerno" >
                 </div>
                 <div class="login_password1">
                     <input type="password" class="login_password2" placeholder="Password" id="password" [value]="password">
@@ -141,7 +142,7 @@ width="350" height="400">
             
             </div>
             <div class="login_btn-container">
-                <button class="login_register_now_btn" onclick="location.href='lecturer_version.html'">Login</button>
+                <button class="login_register_now_btn" onclick="lecturer_login()">Login</button>
                   
               </div>
               <div class="href_container">
@@ -161,5 +162,49 @@ width="350" height="400">
         </div>
     </div>
 </div>
+
+
+
+
+
+<script>
+    
+    function lecturer_login()
+    {
+        redgno=document.getElementById("registerno").value;
+        password=document.getElementById("password").value;
+
+
+        $.ajax({
+               url:"http://127.0.0.1:5000/loginauthlec/"+redgno+','+password,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   localStorage.setItem("lecturer_redgid",redgno)
+                   location.href='lecturer_version.html'
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+               }
+           })
+
+
+          /*d=fetch("http://127.0.0.1:5000/regester/"+redgno+','+email+','+password).then(
+              function(response){
+                  console.log(response)
+                  return response.json();
+              }
+          ).then(function(myjson){
+
+              console.log(myjson)
+              location.href='student_dashbord.html'
+          }).catch(function(error){
+              console.log("Error : "+error);
+          })
+          console.log(d.value)*/
+    }
+
+
+</script>
 </body>
 </html>
