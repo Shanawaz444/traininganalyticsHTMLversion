@@ -291,6 +291,9 @@
         <div class="side_nav">
             <div class="logo_of_student">
                 <img class="logo_of_student_img" src="studentuser.png">
+                <h2 id="redgenum" style="color: white; font-family: Arial, Helvetica, sans-serif;transform: translateX(-15px);">
+
+                </h2>
             </div>
             <div class="subjects">
 
@@ -482,6 +485,7 @@
     </div>
 
     <script>
+        document.getElementById("redgenum").innerHTML = localStorage.getItem("student_redgid");
         document.getElementById("sub1").innerHTML = "subject1";
         document.getElementById("sub2").innerHTML = "subject2";
         document.getElementById("sub3").innerHTML = "subject3";
