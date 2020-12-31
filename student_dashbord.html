@@ -8,6 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <style>
         .student_dashbord_row {
@@ -279,6 +280,10 @@
             margin-right: 10px;
             font-family: 'mulish';
         }
+        #current_subject{
+            font-family: 'mulish'; 
+            text-align: center; 
+        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -388,7 +393,7 @@
 
 
 
-
+             <h2 id="current_subject">python</h2>
             <div class="per_mid_att">
 
                 <div class="per_mid_att_part1">
@@ -397,7 +402,7 @@
                             Total Percentage
                         </h2>
                         <h1 id="total_percentage">
-                            {{total_percentage}}
+                            fetching result..
                         </h1>
                     </div>
                     <div class="mid1">
@@ -405,7 +410,7 @@
                             Mid-1
                         </h2>
                         <h1 id="mid1_marks">
-                            {{mid1_marks}}
+                            fetching result..
                         </h1>
                     </div>
                 </div>
@@ -415,7 +420,7 @@
                             Mid-2
                         </h2>
                         <h1 id="mid2_marks">
-                            {{mid2_marks}}
+                            fetching result..
                         </h1>
 
                     </div>
@@ -424,7 +429,7 @@
                             Attendence
                         </h2>
                         <h1 id="attendence">
-                            {{attendence}}
+                            fetching result..
                         </h1>
                     </div>
                 </div>
@@ -439,7 +444,7 @@
                             Weekly-1
                         </h2>
                         <h1 id="weeklytest1">
-                            {{weeklytest1}}
+                            fetching result..
                         </h1>
                     </div>
                     <div class="Weekly2">
@@ -447,7 +452,7 @@
                             Weekly-2
                         </h2>
                         <h1 id="weeklytest2">
-                            {{weeklytest2}}
+                            fetching result..
                         </h1>
                     </div>
                 </div>
@@ -457,7 +462,7 @@
                             Weekly-3
                         </h2>
                         <h1 id="weeklytest3">
-                            {{weeklytest3}}
+                            fetching result..
                         </h1>
 
                     </div>
@@ -466,7 +471,7 @@
                             Weekly-4
                         </h2>
                         <h1 id="weeklytest4">
-                            {{weeklytest4}}
+                            fetching result..
                         </h1>
                     </div>
                 </div>
@@ -485,21 +490,122 @@
     </div>
 
     <script>
+        
+
+        redgno = localStorage.getItem("student_redgid");
         document.getElementById("redgenum").innerHTML = localStorage.getItem("student_redgid");
-        document.getElementById("sub1").innerHTML = "subject1";
-        document.getElementById("sub2").innerHTML = "subject2";
-        document.getElementById("sub3").innerHTML = "subject3";
-        document.getElementById("sub4").innerHTML = "subject4";
-        document.getElementById("sub5").innerHTML = "subject5";
-        document.getElementById("sub6").innerHTML = "subject6";
-        document.getElementById("weeklytest1").innerHTML = "10";
-        document.getElementById("weeklytest2").innerHTML = "10";
-        document.getElementById("weeklytest3").innerHTML = "10";
-        document.getElementById("weeklytest4").innerHTML = "10";
-        document.getElementById("total_percentage").innerHTML = "77";
-        document.getElementById("mid1_marks").innerHTML = "28";
-        document.getElementById("mid2_marks").innerHTML = "25";
-        document.getElementById("attendence").innerHTML = "80";
+        document.getElementById("sub1").innerHTML = "python";
+        document.getElementById("sub2").innerHTML = "Daa";
+        document.getElementById("sub3").innerHTML = "Dmt";
+        document.getElementById("sub4").innerHTML = "unix";
+        document.getElementById("sub5").innerHTML = "CD";
+        document.getElementById("sub6").innerHTML = "Human values and ethics";
+        current_sub=document.getElementById("sub1").textContent;
+        console.log(current_sub)
+        $.ajax({
+               url:"http://127.0.0.1:5000/weekly1/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest1").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest1").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/weekly2/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest2").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest2").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/weekly3/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest3").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest3").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/weekly4/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest4").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest4").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/mid1/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("mid1_marks").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("mid1_marks").innerHTML = "null";
+               }
+           })
+
+           $.ajax({
+               url:"http://127.0.0.1:5000/mid2/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("mid2_marks").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("mid2_marks").innerHTML = "null";
+               }
+           })
+
+
+
+
+        $.ajax({
+               url:"http://127.0.0.1:5000/attendence/"+redgno,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("attendence").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("attendence").innerHTML = "null";
+               }
+           })
+       
+
+
+           $.ajax({
+               url:"http://127.0.0.1:5000/percentage/"+redgno,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("total_percentage").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("total_percentage").innerHTML = "null";
+               }
+           })
 
 
 
