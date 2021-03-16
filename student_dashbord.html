@@ -72,11 +72,13 @@
         
         .subject1 {
             padding-top: 5px;
+            
             transition: .5s;
         }
         
         .subject1:hover {
             transform: translateY(-2px);
+            color:rgb(33, 220, 226);
             transition: .5s;
         }
         
@@ -87,6 +89,7 @@
         
         .subject2:hover {
             transform: translateY(-2px);
+            color:rgb(33, 220, 226);
             transition: .5s;
         }
         
@@ -97,6 +100,7 @@
         
         .subject3:hover {
             transform: translateY(-2px);
+            color:rgb(33, 220, 226);
             transition: .5s;
         }
         
@@ -107,6 +111,7 @@
         
         .subject4:hover {
             transform: translateY(-2px);
+            color:rgb(33, 220, 226);
             transition: .5s;
         }
         
@@ -117,6 +122,7 @@
         
         .subject5:hover {
             transform: translateY(-2px);
+            color:rgb(33, 220, 226);
             transition: .5s;
         }
         
@@ -127,6 +133,7 @@
         
         .subject6:hover {
             transform: translateY(-2px);
+            color:rgb(33, 220, 226);
             transition: .5s;
         }
         
@@ -139,6 +146,22 @@
         
         .Graph_card {
             display: flex;
+        }
+        @media screen and  (max-width: 1395px) {
+
+            .Graph_card {
+               
+                flex: 1;
+            flex-direction: column;
+        }
+        .parent_graph_card{
+
+            max-width: 60%;
+            align-items: center;
+            margin-left: auto;
+        }
+            
+            
         }
         
         .parent_graph_card {
@@ -279,11 +302,28 @@
             margin-left: 10px;
             margin-right: 10px;
             font-family: 'mulish';
+            transform: scale(1);
+            
+            
+            transition: .5s;
+        }
+        .logout_btn:hover{
+            transform: scale(1.05)translateY(-10px);
+            background-color:rgb(33, 207, 17);
+            color:white;
+            transition: .5s;
         }
         #current_subject{
             font-family: 'mulish'; 
             text-align: center; 
         }
+        #total_percentage{  
+            font-size: small;
+        }
+        .attendence_After{
+            
+        }
+        
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -307,51 +347,51 @@
                 </p>
 
             </div>
-            <div class="subject1" (click)="getsubject1();">
+            <div class="subject1" onclick="getsubject1()">
 
-                <p class="original_subs" id="sub1">
+                <p class="original_subs subject1" id="sub1">
                     subject1
                 </p>
 
 
 
             </div>
-            <div class="subject2" (click)="getsubject2();">
+            <div class="subject2" >
 
-                <p class="original_subs" id="sub2">
+                <p class="original_subs subject2" id="sub2" onclick="getsubject2()">
                     {{subject2}}
                 </p>
 
 
             </div>
-            <div class="subject3" (click)="getsubject3();">
+            <div class="subject3" onclick="getsubject3();">
 
-                <p class="original_subs" id="sub3">
+                <p class="original_subs subject3" id="sub3">
                     {{subject3}}
                 </p>
 
 
             </div>
-            <div class="subject4" (click)="getsubject4();">
+            <div class="subject4" onclick="getsubject4();">
 
-                <p class="original_subs" id="sub4">
+                <p class="original_subs subject4" id="sub4">
                     {{subject4}}
                 </p>
 
 
             </div>
-            <div class="subject5" (click)="getsubject5();">
+            <div class="subject5" onclick="getsubject5();">
 
-                <p class="original_subs" id="sub5">
+                <p class="original_subs subject5" id="sub5">
                     {{subject5}}
                 </p>
 
 
 
             </div>
-            <div class="subject6" (click)="getsubject6();">
+            <div class="subject6" onclick="getsubject6();">
 
-                <p class="original_subs" id="sub6">
+                <p class="original_subs subject6" id="sub6">
                     {{subject6}}
                 </p>
 
@@ -377,6 +417,7 @@
                     OverView
                 </p>
             </div>
+            
             <div class="parent_graph_card">
                 <div class="Graph_card">
                     <div class="line_graph">
@@ -401,7 +442,7 @@
                         <h2>
                             Total Percentage
                         </h2>
-                        <h1 id="total_percentage">
+                        <h1 id="total_percentage" style="font-size:small" >
                             fetching result..
                         </h1>
                     </div>
@@ -409,7 +450,7 @@
                         <h2>
                             Mid-1
                         </h2>
-                        <h1 id="mid1_marks">
+                        <h1 id="mid1_marks" style="font-size:small">
                             fetching result..
                         </h1>
                     </div>
@@ -419,7 +460,7 @@
                         <h2>
                             Mid-2
                         </h2>
-                        <h1 id="mid2_marks">
+                        <h1 id="mid2_marks" style="font-size:small">
                             fetching result..
                         </h1>
 
@@ -428,7 +469,7 @@
                         <h2>
                             Attendence
                         </h2>
-                        <h1 id="attendence">
+                        <h1 id="attendence" style="font-size:small">
                             fetching result..
                         </h1>
                     </div>
@@ -443,7 +484,7 @@
                         <h2>
                             Weekly-1
                         </h2>
-                        <h1 id="weeklytest1">
+                        <h1 id="weeklytest1" style="font-size:small">
                             fetching result..
                         </h1>
                     </div>
@@ -451,7 +492,7 @@
                         <h2>
                             Weekly-2
                         </h2>
-                        <h1 id="weeklytest2">
+                        <h1 id="weeklytest2" style="font-size:small">
                             fetching result..
                         </h1>
                     </div>
@@ -461,7 +502,7 @@
                         <h2>
                             Weekly-3
                         </h2>
-                        <h1 id="weeklytest3">
+                        <h1 id="weeklytest3" style="font-size:small">
                             fetching result..
                         </h1>
 
@@ -470,7 +511,7 @@
                         <h2>
                             Weekly-4
                         </h2>
-                        <h1 id="weeklytest4">
+                        <h1 id="weeklytest4" style="font-size:small">
                             fetching result..
                         </h1>
                     </div>
@@ -490,7 +531,9 @@
     </div>
 
     <script>
-        
+         
+
+
 
         redgno = localStorage.getItem("student_redgid");
         document.getElementById("redgenum").innerHTML = localStorage.getItem("student_redgid");
@@ -501,6 +544,181 @@
         document.getElementById("sub5").innerHTML = "CD";
         document.getElementById("sub6").innerHTML = "Human values and ethics";
         current_sub=document.getElementById("sub1").textContent;
+
+        console.log(current_sub)
+        $.ajax({
+               url:"http://127.0.0.1:5000/weekly1/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest1").classList.add("attendence_After");
+                   document.getElementById("weeklytest1").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest1").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/weekly2/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest2").classList.add("attendence_After");
+                   document.getElementById("weeklytest2").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest2").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/weekly3/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest3").classList.add("attendence_After");
+                   document.getElementById("weeklytest3").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest3").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/weekly4/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest4").classList.add("attendence_After");
+                   document.getElementById("weeklytest4").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest4").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/mid1/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("mid1_marks").classList.add("attendence_After");
+                   document.getElementById("mid1_marks").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("mid1_marks").innerHTML = "null";
+               }
+           })
+
+           $.ajax({
+               url:"http://127.0.0.1:5000/mid2/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("mid2_marks").classList.add("attendence_After");
+                   document.getElementById("mid2_marks").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("mid2_marks").innerHTML = "null";
+               }
+           })
+
+
+
+        
+           global_attendence=80
+        $.ajax({
+               url:"http://127.0.0.1:5000/attendence/"+redgno,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   global_attendence=result
+                   document.getElementById("attendence").classList.add("attendence_After");
+                   document.getElementById("attendence").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+                   
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("attendence").innerHTML = "null";
+               }
+           })
+       
+
+
+           $.ajax({
+               url:"http://127.0.0.1:5000/percentage/"+redgno,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("total_percentage").classList.add("attendence_After");
+
+                   document.getElementById("total_percentage").innerHTML = result;
+                  var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("total_percentage").innerHTML = "null";
+               }
+           })
+
+
+
+
+
+
+
+           function getsubject1(){
+
+
+            var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+                   cols[i].style.fontSize="small";
+                   cols[i].style.fontSize="medium";
+                    }
+
+
+            current_sub="python";
+            document.getElementById("current_subject").innerHTML="Python"
+            document.getElementById("weeklytest1").innerHTML = "fetching result...";
+    document.getElementById("weeklytest2").innerHTML = "fetching result...";
+    document.getElementById("weeklytest3").innerHTML = "fetching result...";
+    document.getElementById("weeklytest4").innerHTML = "fetching result...";
+    document.getElementById("mid1_marks").innerHTML = "fetching result...";
+    document.getElementById("mid2_marks").innerHTML = "fetching result...";
         console.log(current_sub)
         $.ajax({
                url:"http://127.0.0.1:5000/weekly1/"+redgno+","+current_sub,
@@ -575,15 +793,378 @@
                    document.getElementById("mid2_marks").innerHTML = "null";
                }
            })
+           
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+           }
+
+
+ function getsubject2(){
+
+    document.getElementById("current_subject").innerHTML="daa"
+    document.getElementById("weeklytest1").innerHTML = "fetching result...";
+    document.getElementById("weeklytest2").innerHTML = "fetching result...";
+    document.getElementById("weeklytest3").innerHTML = "fetching result...";
+    document.getElementById("weeklytest4").innerHTML = "fetching result...";
+    document.getElementById("mid1_marks").innerHTML = "fetching result...";
+    document.getElementById("mid2_marks").innerHTML = "fetching result...";
+
+current_sub=document.getElementById("current_subject").textContent;
+document.getElementById("current_subject").innerHTML="Data Analysis And Design"
+console.log(current_sub)
+$.ajax({
+   url:"http://127.0.0.1:5000/weekly1/"+redgno+","+current_sub,
+   type:"GET",
+   success:function(result){
+       console.log(result)
+       document.getElementById("weeklytest1").innerHTML = result;
+   },
+   error:function(error){
+       console.log("error : ${error}")
+       document.getElementById("weeklytest1").innerHTML = "null";
+   }
+})
+$.ajax({
+   url:"http://127.0.0.1:5000/weekly2/"+redgno+","+current_sub,
+   type:"GET",
+   success:function(result){
+       console.log(result)
+       document.getElementById("weeklytest2").innerHTML = result;
+   },
+   error:function(error){
+       console.log("error : ${error}")
+       document.getElementById("weeklytest2").innerHTML = "null";
+   }
+})
+$.ajax({
+   url:"http://127.0.0.1:5000/weekly3/"+redgno+","+current_sub,
+   type:"GET",
+   success:function(result){
+       console.log(result)
+       document.getElementById("weeklytest3").innerHTML = result;
+   },
+   error:function(error){
+       console.log("error : ${error}")
+       document.getElementById("weeklytest3").innerHTML = "null";
+   }
+})
+$.ajax({
+   url:"http://127.0.0.1:5000/weekly4/"+redgno+","+current_sub,
+   type:"GET",
+   success:function(result){
+       console.log(result)
+       document.getElementById("weeklytest4").innerHTML = result;
+   },
+   error:function(error){
+       console.log("error : ${error}")
+       document.getElementById("weeklytest4").innerHTML = "null";
+   }
+})
+$.ajax({
+   url:"http://127.0.0.1:5000/mid1/"+redgno+","+current_sub,
+   type:"GET",
+   success:function(result){
+       console.log(result)
+       document.getElementById("mid1_marks").innerHTML = result;
+   },
+   error:function(error){
+       console.log("error : ${error}")
+       document.getElementById("mid1_marks").innerHTML = "null";
+   }
+})
+
+$.ajax({
+   url:"http://127.0.0.1:5000/mid2/"+redgno+","+current_sub,
+   type:"GET",
+   success:function(result){
+       console.log(result)
+       document.getElementById("mid2_marks").innerHTML = result;
+   },
+   error:function(error){
+       console.log("error : ${error}")
+       document.getElementById("mid2_marks").innerHTML = "null";
+   }
+})
+
+}
 
 
 
+function getsubject3(){
 
+document.getElementById("current_subject").innerHTML="dmt"
+document.getElementById("weeklytest1").innerHTML = "fetching result...";
+document.getElementById("weeklytest2").innerHTML = "fetching result...";
+document.getElementById("weeklytest3").innerHTML = "fetching result...";
+document.getElementById("weeklytest4").innerHTML = "fetching result...";
+document.getElementById("mid1_marks").innerHTML = "fetching result...";
+document.getElementById("mid2_marks").innerHTML = "fetching result...";
+
+current_sub=document.getElementById("current_subject").textContent;
+document.getElementById("current_subject").innerHTML="Data Mining"
+console.log(current_sub)
+$.ajax({
+url:"http://127.0.0.1:5000/weekly1/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest1").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest1").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly2/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest2").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest2").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly3/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest3").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest3").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly4/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest4").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest4").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/mid1/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("mid1_marks").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("mid1_marks").innerHTML = "null";
+}
+})
+
+$.ajax({
+url:"http://127.0.0.1:5000/mid2/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("mid2_marks").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("mid2_marks").innerHTML = "null";
+}
+})
+
+}
+
+
+function getsubject4(){
+
+document.getElementById("current_subject").innerHTML="unix"
+document.getElementById("weeklytest1").innerHTML = "fetching result...";
+document.getElementById("weeklytest2").innerHTML = "fetching result...";
+document.getElementById("weeklytest3").innerHTML = "fetching result...";
+document.getElementById("weeklytest4").innerHTML = "fetching result...";
+document.getElementById("mid1_marks").innerHTML = "fetching result...";
+document.getElementById("mid2_marks").innerHTML = "fetching result...";
+
+current_sub=document.getElementById("current_subject").textContent;
+document.getElementById("current_subject").innerHTML="Unix"
+console.log(current_sub)
+$.ajax({
+url:"http://127.0.0.1:5000/weekly1/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest1").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest1").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly2/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest2").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest2").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly3/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest3").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest3").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly4/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest4").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest4").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/mid1/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("mid1_marks").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("mid1_marks").innerHTML = "null";
+}
+})
+
+$.ajax({
+url:"http://127.0.0.1:5000/mid2/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("mid2_marks").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("mid2_marks").innerHTML = "null";
+}
+})
+
+}
+function getsubject5(){
+
+document.getElementById("current_subject").innerHTML="cd"
+document.getElementById("weeklytest1").innerHTML = "fetching result...";
+document.getElementById("weeklytest2").innerHTML = "fetching result...";
+document.getElementById("weeklytest3").innerHTML = "fetching result...";
+document.getElementById("weeklytest4").innerHTML = "fetching result...";
+document.getElementById("mid1_marks").innerHTML = "fetching result...";
+document.getElementById("mid2_marks").innerHTML = "fetching result...";
+
+current_sub=document.getElementById("current_subject").textContent;
+document.getElementById("current_subject").innerHTML="Compiler Design"
+console.log(current_sub)
+$.ajax({
+url:"http://127.0.0.1:5000/weekly1/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest1").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest1").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly2/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest2").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest2").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly3/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest3").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest3").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly4/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest4").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest4").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/mid1/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("mid1_marks").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("mid1_marks").innerHTML = "null";
+}
+})
+
+$.ajax({
+url:"http://127.0.0.1:5000/mid2/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("mid2_marks").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("mid2_marks").innerHTML = "null";
+}
+})
+
+}
+
+        var ctx = document.getElementById('myChart');
         $.ajax({
                url:"http://127.0.0.1:5000/attendence/"+redgno,
                type:"GET",
                success:function(result){
                    console.log(result)
+                   global_attendence=result
                    document.getElementById("attendence").innerHTML = result;
                },
                error:function(error){
@@ -591,30 +1172,9 @@
                    document.getElementById("attendence").innerHTML = "null";
                }
            })
-       
-
-
-           $.ajax({
-               url:"http://127.0.0.1:5000/percentage/"+redgno,
-               type:"GET",
-               success:function(result){
-                   console.log(result)
-                   document.getElementById("total_percentage").innerHTML = result;
-               },
-               error:function(error){
-                   console.log("error : ${error}")
-                   document.getElementById("total_percentage").innerHTML = "null";
-               }
-           })
-
-
-
-
-
-
-
-        var ctx = document.getElementById('myChart');
+           
         var myChart = new Chart(ctx, {
+            
             type: 'line',
             data: {
                 labels: ['Sem 1-1-', 'Sem1-2', 'Sem 2-1', 'Sem 2-2', 'Sem 3-1', 'Sem 3-2'],
@@ -658,7 +1218,7 @@
                 labels: ['Absent', 'Present', 'Partial'],
                 datasets: [{
                     label: '# of Votes',
-                    data: [10, 80, 10],
+                    data: [10, global_attendence, 10],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.8)',
                         'rgba(153, 102, 255, 0.8)',
