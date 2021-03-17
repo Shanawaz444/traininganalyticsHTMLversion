@@ -16,8 +16,10 @@
         }
         
         .side_nav {
-            width: 200px;
+            width: auto;
             background-color: #363740;
+            padding-left: 30px ;
+            padding-right: 30px ;
         }
         
         .logo_of_student_img {
@@ -320,9 +322,91 @@
         #total_percentage{  
             font-size: small;
         }
-        .attendence_After{
+       
+        
+        .current_semester_title{
+            font-size: large;
+            font-weight: bold;
+            color:white;
+            font-family: Alef;
             
         }
+        .current_semester_list_structur{
+            width: auto;
+            text-align: center;
+            padding:5px;
+            list-style-type: none;
+            margin-top: 1%;
+          
+        }
+        .current_semester_list{
+           
+            font-size: medium;
+            font-weight: bold;
+            color:black;
+            font-family: Alef;
+            width: auto;
+            background-color:white;
+            transition: all 0.3s ease-in;
+            opacity: 0;
+            height:0;
+        }
+        .currentsemester{
+
+width:auto;
+height:20px;
+background-color:white;
+margin-top: 10px;
+text-align: center;
+padding:10px;
+font-size: medium;
+font-weight: bold;
+color:black;
+font-family: Alef;
+margin-bottom: 0px;
+position: relative;
+transition: .5s;
+
+
+}
+
+       .currentsemester:hover{
+           transform:scale(1.05);
+        transition: .5s;
+       }
+       .current_semester_list:hover{
+           transform:scale(1.05);
+        transition: .5s;
+       }
+       .currernt_semester_catagory:hover .current_semester_list {
+            transition: all 0.5s;
+            height: 100px;
+            opacity: 1;
+            
+            
+          
+        }
+        .current_semester_list_structur_lists{
+            margin-top: 2px;
+            margin-bottom: 1px;
+            transition: .5s;
+            opacity: 0;
+
+
+        }
+        .currernt_semester_catagory:hover .current_semester_list_structur_lists {
+            
+           
+            opacity: 1;
+            
+            
+          
+        }
+        .current_semester_list_structur_lists:hover{
+           transform:scale(1.05);
+        transition: .5s;
+       }
+        
         
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -340,6 +424,49 @@
 
                 </h2>
             </div>
+                
+
+            <span class="current_semester_title">
+                Current Year
+            </span>
+            <div class="currernt_semester_catagory">
+                <div class="currentsemester">
+                    <span>Year 1</span>
+                </div>
+                <div class="current_semester_list">
+                    <ul class="current_semester_list_structur">
+
+                        <li class="current_semester_list_structur_lists">Year 1</li>
+                        <li class="current_semester_list_structur_lists">Year 2</li>
+                        <li class="current_semester_list_structur_lists">Year 3</li>
+                        <li class="current_semester_list_structur_lists">Year 4</li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+
+                <span class="current_semester_title">
+                    Current semester
+                </span>
+                <div class="currernt_semester_catagory">
+                    <div class="currentsemester">
+                        <span>Semester 1</span>
+                    </div>
+                    <div class="current_semester_list">
+                        <ul class="current_semester_list_structur">
+
+                            <li class="current_semester_list_structur_lists">semester 1</li>
+                            <li class="current_semester_list_structur_lists">semester 2</li>
+                          
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+                
+
+                
             <div class="subjects">
 
                 <p class="subjects_bdr">
@@ -398,7 +525,7 @@
 
             </div>
 
-            <a onclick="location.href='index.html'">
+            <a onclick="logout_from_this_page()">
                 <div class="logout_btn">
                     <span>
                     Logout
@@ -532,6 +659,12 @@
 
     <script>
          
+
+         function logout_from_this_page(){
+             localStorage.removeItem("student_redgid");
+            location.href='index.html'
+         }
+
 
 
 
