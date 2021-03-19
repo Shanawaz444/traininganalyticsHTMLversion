@@ -20,6 +20,8 @@
             background-color: #363740;
             padding-left: 30px ;
             padding-right: 30px ;
+            
+        
         }
         
         .logo_of_student_img {
@@ -407,7 +409,39 @@ transition: .5s;
         transition: .5s;
        }
         
-        
+        .achivements_and_certificates{
+            position: absolute;
+            margin-top:50px;
+            display: flex;
+            margin-left:auto;
+            margin-right: 50px;
+            right:0;
+
+        }
+        .achivements{
+            padding:20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 10px;
+            background-color: white;
+        }
+        .certificates{
+            
+            background-color: red;
+        }
+        .achivements_title{
+            display: flex;
+        }
+        .achivements_icon{
+           max-width:60px
+        }
+        .achivements_title{
+            font-size:x-large;
+            font-family: Alef;
+            font-weight:600;
+        }
+        .main_part_of_page{
+           
+        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -559,99 +593,120 @@ transition: .5s;
             </div>
 
 
-
-
-             <h2 id="current_subject">python</h2>
-            <div class="per_mid_att">
-
-                <div class="per_mid_att_part1">
-                    <div class="sem_percentage">
-                        <h2>
-                            Total Percentage
-                        </h2>
-                        <h1 id="total_percentage" style="font-size:small" >
-                            fetching result..
-                        </h1>
-                    </div>
-                    <div class="mid1">
-                        <h2>
-                            Mid-1
-                        </h2>
-                        <h1 id="mid1_marks" style="font-size:small">
-                            fetching result..
-                        </h1>
+            <div class="achivements_and_certificates">
+                <div class="achivements">
+                    <div class="achivements_title">
+                       
+                            <img class="achivements_icon" src="award.png" alt="">
+                       
+                        <div class="achivements_title"> 
+                            <span>
+                                Achivements
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div class="per_mid_att_part1">
-                    <div class="mid2">
-                        <h2>
-                            Mid-2
-                        </h2>
-                        <h1 id="mid2_marks" style="font-size:small">
-                            fetching result..
-                        </h1>
-
-                    </div>
-                    <div class="attendence">
-                        <h2>
-                            Attendence
-                        </h2>
-                        <h1 id="attendence" style="font-size:small">
-                            fetching result..
-                        </h1>
-                    </div>
+                <div class="certificates">
+                    aaaaaa
                 </div>
-
-            </div>
-
-            <div class="per_mid_att">
-
-                <div class="per_mid_att_part1">
-                    <div class="Weekly1">
-                        <h2>
-                            Weekly-1
-                        </h2>
-                        <h1 id="weeklytest1" style="font-size:small">
-                            fetching result..
-                        </h1>
-                    </div>
-                    <div class="Weekly2">
-                        <h2>
-                            Weekly-2
-                        </h2>
-                        <h1 id="weeklytest2" style="font-size:small">
-                            fetching result..
-                        </h1>
-                    </div>
-                </div>
-                <div class="per_mid_att_part1">
-                    <div class="Weekly3">
-                        <h2>
-                            Weekly-3
-                        </h2>
-                        <h1 id="weeklytest3" style="font-size:small">
-                            fetching result..
-                        </h1>
-
-                    </div>
-                    <div class="Weekly4">
-                        <h2>
-                            Weekly-4
-                        </h2>
-                        <h1 id="weeklytest4" style="font-size:small">
-                            fetching result..
-                        </h1>
-                    </div>
-                </div>
-
             </div>
 
 
-            <div class="powerdby">
-                <p>
-                    Powerd by Marvels creed
-                </p>
-            </div>
+
+
+             <div class="main_part_of_page">
+                <h2 id="current_subject">python</h2>
+                <div class="per_mid_att">
+    
+                    <div class="per_mid_att_part1">
+                        <div class="sem_percentage">
+                            <h2>
+                                Total Percentage
+                            </h2>
+                            <h1 id="total_percentage" style="font-size:small" >
+                                fetching result..
+                            </h1>
+                        </div>
+                        <div class="mid1">
+                            <h2>
+                                Mid-1
+                            </h2>
+                            <h1 id="mid1_marks" style="font-size:small">
+                                fetching result..
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="per_mid_att_part1">
+                        <div class="mid2">
+                            <h2>
+                                Mid-2
+                            </h2>
+                            <h1 id="mid2_marks" style="font-size:small">
+                                fetching result..
+                            </h1>
+    
+                        </div>
+                        <div class="attendence">
+                            <h2>
+                                Attendence
+                            </h2>
+                            <h1 id="attendence" style="font-size:small">
+                                fetching result..
+                            </h1>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <div class="per_mid_att">
+    
+                    <div class="per_mid_att_part1">
+                        <div class="Weekly1">
+                            <h2>
+                                Weekly-1
+                            </h2>
+                            <h1 id="weeklytest1" style="font-size:small">
+                                fetching result..
+                            </h1>
+                        </div>
+                        <div class="Weekly2">
+                            <h2>
+                                Weekly-2
+                            </h2>
+                            <h1 id="weeklytest2" style="font-size:small">
+                                fetching result..
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="per_mid_att_part1">
+                        <div class="Weekly3">
+                            <h2>
+                                Weekly-3
+                            </h2>
+                            <h1 id="weeklytest3" style="font-size:small">
+                                fetching result..
+                            </h1>
+    
+                        </div>
+                        <div class="Weekly4">
+                            <h2>
+                                Weekly-4
+                            </h2>
+                            <h1 id="weeklytest4" style="font-size:small">
+                                fetching result..
+                            </h1>
+                        </div>
+                    </div>
+    
+                </div>
+    
+    
+                <div class="powerdby">
+                    <p>
+                        Powerd by Marvels creed
+                    </p>
+                </div>
+             </div>
 
 
         </div>
