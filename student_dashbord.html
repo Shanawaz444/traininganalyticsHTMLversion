@@ -9,440 +9,7 @@
     <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js "></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <style>
-        .student_dashbord_row {
-            display: flex;
-        }
-        
-        .side_nav {
-            width: auto;
-            background-color: #363740;
-            padding-left: 30px ;
-            padding-right: 30px ;
-            
-        
-        }
-        
-        .logo_of_student_img {
-            width: 100px;
-            height: 100px;
-        }
-        
-        .logo_of_student {
-            margin-left: 45px;
-            margin-top: 20px;
-        }
-        
-        .subjects {
-            padding-top: 40px;
-            color: #DDE2FF;
-            font-family: 'mulish';
-            font-size: 15px;
-            font-weight: 100;
-        }
-        
-        .subjects_bdr {
-            border-left: white;
-            border-top: transparent;
-            border-right: transparent;
-            border-bottom: transparent;
-            border-width: 3px;
-            border-style: solid;
-            background-color: #9fa2b41e;
-            margin-right: 20px;
-            padding-left: 33px;
-            background-image: url("student_sub_pic.png");
-            background-repeat: no-repeat;
-            background-position: 6%;
-            background-size: 20px;
-            background-clip: border-box;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-        
-        .original_subs {
-            background-image: url("subjects_pic.png");
-            background-repeat: no-repeat;
-            background-position: 6%;
-            background-size: 20px;
-            background-clip: border-box;
-            color: #DDE2FF;
-            font-family: 'mulish';
-            font-size: 13px;
-            font-weight: 100;
-            padding-left: 40px;
-        }
-        
-        .subject1 {
-            padding-top: 5px;
-            
-            transition: .5s;
-        }
-        
-        .subject1:hover {
-            transform: translateY(-2px);
-            color:rgb(33, 220, 226);
-            transition: .5s;
-        }
-        
-        .subject2 {
-            padding-top: 5px;
-            transition: .5s;
-        }
-        
-        .subject2:hover {
-            transform: translateY(-2px);
-            color:rgb(33, 220, 226);
-            transition: .5s;
-        }
-        
-        .subject3 {
-            padding-top: 5px;
-            transition: .5s;
-        }
-        
-        .subject3:hover {
-            transform: translateY(-2px);
-            color:rgb(33, 220, 226);
-            transition: .5s;
-        }
-        
-        .subject4 {
-            padding-top: 5px;
-            transition: .5s;
-        }
-        
-        .subject4:hover {
-            transform: translateY(-2px);
-            color:rgb(33, 220, 226);
-            transition: .5s;
-        }
-        
-        .subject5 {
-            padding-top: 5px;
-            transition: .5s;
-        }
-        
-        .subject5:hover {
-            transform: translateY(-2px);
-            color:rgb(33, 220, 226);
-            transition: .5s;
-        }
-        
-        .subject6 {
-            padding-top: 5px;
-            transition: .5s;
-        }
-        
-        .subject6:hover {
-            transform: translateY(-2px);
-            color:rgb(33, 220, 226);
-            transition: .5s;
-        }
-        
-        .overView {
-            font-family: 'mulish';
-            font-size: 25px;
-            padding-left: 30px;
-            font-weight: 800;
-        }
-        
-        .Graph_card {
-            display: flex;
-        }
-        @media screen and  (max-width: 1395px) {
-
-            .Graph_card {
-               
-                flex: 1;
-            flex-direction: column;
-        }
-        .parent_graph_card{
-
-            max-width: 60%;
-            align-items: center;
-            margin-left: auto;
-        }
-            
-            
-        }
-        
-        .parent_graph_card {
-            border-radius: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            padding: 10px;
-            background-color: white;
-            right: 0;
-            margin-left: 38px;
-        }
-        
-        .pie_graph {
-            padding-left: 130px;
-        }
-        
-        .per_mid_att {
-            display: flex;
-            margin-left: 150px;
-            font-family: 'mulish';
-            padding-left: 30px;
-            font-size: 12px;
-            font-weight: 100;
-        }
-        
-        .per_mid_att_part1 {
-            display: flex;
-        }
-        
-        .per_mid_att_part2 {
-            display: flex;
-        }
-        
-        .sem_percentage {
-            text-align: center;
-            padding: 20px;
-            background-color: white;
-            margin-top: 40px;
-            margin-left: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 10px;
-        }
-        
-        .mid1 {
-            text-align: center;
-            padding: 30px;
-            background-color: white;
-            margin-top: 40px;
-            margin-left: 40px;
-            padding-left: 55px;
-            padding-right: 55px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 10px;
-        }
-        
-        .mid2 {
-            text-align: center;
-            padding: 30px;
-            background-color: white;
-            margin-top: 40px;
-            margin-left: 40px;
-            padding-left: 55px;
-            padding-right: 55px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 10px;
-        }
-        
-        .attendence {
-            text-align: center;
-            padding: 30px;
-            background-color: white;
-            margin-top: 40px;
-            margin-left: 40px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 10px;
-        }
-        
-        .Weekly1 {
-            text-align: center;
-            padding: 20px;
-            background-color: white;
-            margin-top: 40px;
-            margin-left: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 10px;
-            padding-left: 50px;
-            padding-right: 50px;
-        }
-        
-        .Weekly2 {
-            text-align: center;
-            padding: 30px;
-            background-color: white;
-            margin-top: 40px;
-            margin-left: 40px;
-            padding-left: 40px;
-            padding-right: 40px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 10px;
-        }
-        
-        .Weekly3 {
-            text-align: center;
-            padding: 30px;
-            background-color: white;
-            margin-top: 40px;
-            margin-left: 40px;
-            padding-left: 40px;
-            padding-right: 40px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 10px;
-        }
-        
-        .Weekly4 {
-            text-align: center;
-            padding: 30px;
-            background-color: white;
-            margin-top: 40px;
-            margin-left: 40px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 10px;
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-        
-        .powerdby {
-            text-align: center;
-            font-family: 'mulish';
-            font-size: 12px;
-            font-weight: 100;
-            margin-top: 20px;
-        }
-        
-        .logout_btn {
-            text-align: center;
-            margin-top: 100px;
-            background-color: aliceblue;
-            padding: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-            font-family: 'mulish';
-            transform: scale(1);
-            
-            
-            transition: .5s;
-        }
-        .logout_btn:hover{
-            transform: scale(1.05)translateY(-10px);
-            background-color:rgb(33, 207, 17);
-            color:white;
-            transition: .5s;
-        }
-        #current_subject{
-            font-family: 'mulish'; 
-            text-align: center; 
-        }
-        #total_percentage{  
-            font-size: small;
-        }
-       
-        
-        .current_semester_title{
-            font-size: large;
-            font-weight: bold;
-            color:white;
-            font-family: Alef;
-            
-        }
-        .current_semester_list_structur{
-            width: auto;
-            text-align: center;
-            padding:5px;
-            list-style-type: none;
-            margin-top: 1%;
-          
-        }
-        .current_semester_list{
-           
-            font-size: medium;
-            font-weight: bold;
-            color:black;
-            font-family: Alef;
-            width: auto;
-            background-color:white;
-            transition: all 0.3s ease-in;
-            opacity: 0;
-            height:0;
-        }
-        .currentsemester{
-
-width:auto;
-height:20px;
-background-color:white;
-margin-top: 10px;
-text-align: center;
-padding:10px;
-font-size: medium;
-font-weight: bold;
-color:black;
-font-family: Alef;
-margin-bottom: 0px;
-position: relative;
-transition: .5s;
-
-
-}
-
-       .currentsemester:hover{
-           transform:scale(1.05);
-        transition: .5s;
-       }
-       .current_semester_list:hover{
-           transform:scale(1.05);
-        transition: .5s;
-       }
-       .currernt_semester_catagory:hover .current_semester_list {
-            transition: all 0.5s;
-            height: 100px;
-            opacity: 1;
-            
-            
-          
-        }
-        .current_semester_list_structur_lists{
-            margin-top: 2px;
-            margin-bottom: 1px;
-            transition: .5s;
-            opacity: 0;
-
-
-        }
-        .currernt_semester_catagory:hover .current_semester_list_structur_lists {
-            
-           
-            opacity: 1;
-            
-            
-          
-        }
-        .current_semester_list_structur_lists:hover{
-           transform:scale(1.05);
-        transition: .5s;
-       }
-        
-        .achivements_and_certificates{
-            position: absolute;
-            margin-top:50px;
-            display: flex;
-            margin-left:auto;
-            margin-right: 50px;
-            right:0;
-
-        }
-        .achivements{
-            padding:20px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 10px;
-            background-color: white;
-        }
-        .certificates{
-            
-            background-color: red;
-        }
-        .achivements_title{
-            display: flex;
-        }
-        .achivements_icon{
-           max-width:60px
-        }
-        .achivements_title{
-            font-size:x-large;
-            font-family: Alef;
-            font-weight:600;
-        }
-        .main_part_of_page{
-           
-        }
-    </style>
+    <link rel="stylesheet" href="stytles/student_dash_board.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
@@ -467,7 +34,7 @@ transition: .5s;
                 <div class="currentsemester">
                     <span>Year 1</span>
                 </div>
-                <div class="current_semester_list">
+                <div class="current_semester_list_year"">
                     <ul class="current_semester_list_structur">
 
                         <li class="current_semester_list_structur_lists">Year 1</li>
@@ -605,9 +172,48 @@ transition: .5s;
                             </span>
                         </div>
                     </div>
+
+                    <div class="achivements_inner_list">
+                        <ul class="achivements_inner_ul">
+                            <li class="achive">
+                                CodeChef Campus repersentative
+                            </li>
+                            <li class="achive">
+                                CodeChef Campus repersentative
+                            </li>
+                            <li class="achive">
+                                CodeChef Campus repersentative
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
                 <div class="certificates">
-                    aaaaaa
+                    <div class="certificates_title_block">
+                        <img class="winner_icon" src="winner.png" alt="">
+
+                        <div class="certificates_title"> 
+                            <span>
+                                Certificates
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="certificates_inner_list">
+                        <ul class="certificates_inner_ul">
+                            <li class="certificates_list">
+                                Successfully compleated the C++ course in the NPTEL.
+                            </li>
+                            <li class="certificates_list">
+                                CodeChef Campus repersentative
+                            </li>
+                            <li class="certificates_list">
+                                CodeChef Campus repersentative
+                            </li>
+                        </ul>
+                    </div>
+                    
                 </div>
             </div>
 
